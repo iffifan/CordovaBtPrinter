@@ -110,7 +110,7 @@ public class chbtprinter extends CordovaPlugin {
 
             callbackContext.success("tt");
         } catch (Exception e) {
-//            errMsg = e.getMessage();
+            errMsg = e.getMessage();
 //            Log.e(LOG_TAG, errMsg);
 //            e.printStackTrace();
             callbackContext.error(errMsg);
