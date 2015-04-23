@@ -26,6 +26,7 @@
         </config-file>
 
         <source-file src="src/android/chbtprinter.java" target-dir="src/com/webdone/chbtprinter/"/>
+        <source-file src="src/android/btsdk.jar" target-dir="libs" framework="true" />
     </platform>
 
 </plugin>
