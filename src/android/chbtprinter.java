@@ -58,36 +58,38 @@ public class BluetoothPrinter extends CordovaPlugin {
     }
 
     void listBT(CallbackContext callbackContext) {
-        BluetoothAdapter mBluetoothAdapter = null;
-        String errMsg = null;
+//        BluetoothAdapter mBluetoothAdapter = null;
+//        String errMsg = null;
         try {
-            mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-            if (mBluetoothAdapter == null) {
-                errMsg = "No bluetooth adapter available";
-                Log.e(LOG_TAG, errMsg);
-                callbackContext.error(errMsg);
-                return;
-            }
-            if (!mBluetoothAdapter.isEnabled()) {
-                Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                this.cordova.getActivity().startActivityForResult(enableBluetooth, 0);
-            }
-            Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-            if (pairedDevices.size() > 0) {
-                JSONArray json = new JSONArray();
-                for (BluetoothDevice device : pairedDevices) {
-//					Hashtable map = new Hashtable();
-//					map.put("type", device.getType());
-//					map.put("address", device.getAddress());
-//					map.put("name", device.getName());
-//					JSONObject jObj = new JSONObject(map);
-                    json.put(device.getName());
-                }
-                callbackContext.success(json);
-            } else {
-                callbackContext.error("No Bluetooth Device Found");
-            }
-//			Log.d(LOG_TAG, "Bluetooth Device Found: " + mmDevice.getName());
+//            mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+//            if (mBluetoothAdapter == null) {
+//                errMsg = "No bluetooth adapter available";
+//                Log.e(LOG_TAG, errMsg);
+//                callbackContext.error(errMsg);
+//                return;
+//            }
+//            if (!mBluetoothAdapter.isEnabled()) {
+//                Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//                this.cordova.getActivity().startActivityForResult(enableBluetooth, 0);
+//            }
+//            Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+//            if (pairedDevices.size() > 0) {
+//                JSONArray json = new JSONArray();
+//                for (BluetoothDevice device : pairedDevices) {
+////					Hashtable map = new Hashtable();
+////					map.put("type", device.getType());
+////					map.put("address", device.getAddress());
+////					map.put("name", device.getName());
+////					JSONObject jObj = new JSONObject(map);
+//                    json.put(device.getName());
+//                }
+//                callbackContext.success("tt");
+//            } else {
+//                callbackContext.error("No Bluetooth Device Found");
+//            }
+////			Log.d(LOG_TAG, "Bluetooth Device Found: " + mmDevice.getName());
+
+            callbackContext.success("tt");
         } catch (Exception e) {
             errMsg = e.getMessage();
             Log.e(LOG_TAG, errMsg);
@@ -131,14 +133,15 @@ public class BluetoothPrinter extends CordovaPlugin {
     boolean openBT(CallbackContext callbackContext) throws IOException {
         try {
             // Standard SerialPortService ID
-            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
-            mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
-            mmSocket.connect();
-            mmOutputStream = mmSocket.getOutputStream();
-            mmInputStream = mmSocket.getInputStream();
-            beginListenForData();
-//			Log.d(LOG_TAG, "Bluetooth Opened: " + mmDevice.getName());
-            callbackContext.success("Bluetooth Opened: " + mmDevice.getName());
+//            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+//            mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
+//            mmSocket.connect();
+//            mmOutputStream = mmSocket.getOutputStream();
+//            mmInputStream = mmSocket.getInputStream();
+//            beginListenForData();
+////			Log.d(LOG_TAG, "Bluetooth Opened: " + mmDevice.getName());
+//            callbackContext.success("Bluetooth Opened: " + mmDevice.getName());
+            callbackContext.success("Bluetooth Opened");
             return true;
         } catch (Exception e) {
             String errMsg = e.getMessage();
