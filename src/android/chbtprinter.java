@@ -1,7 +1,7 @@
 package com.webdone.chbtprinter;
 
 
-public class BluetoothPrinter extends CordovaPlugin {
+public class chbtprinter extends CordovaPlugin {
 //    private static final String LOG_TAG = "BluetoothPrinter";
 //    BluetoothAdapter mBluetoothAdapter;
 //    BluetoothSocket mmSocket;
@@ -14,7 +14,7 @@ public class BluetoothPrinter extends CordovaPlugin {
 //    int counter;
 //    volatile boolean stopWorker;
 
-    public BluetoothPrinter() {
+    public chbtprinter() {
     }
 
     @Override
