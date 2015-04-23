@@ -108,12 +108,14 @@ public class chbtprinter extends CordovaPlugin {
 //            }
 ////			Log.d(LOG_TAG, "Bluetooth Device Found: " + mmDevice.getName());
 
-            callbackContext.success("tt");
+            callbackContext.success("yes");
         } catch (Exception e) {
-            errMsg = e.getMessage();
+//            errMsg = e.getMessage();
 //            Log.e(LOG_TAG, errMsg);
 //            e.printStackTrace();
-            callbackContext.error(errMsg);
+//            callbackContext.error(errMsg);
+            callbackContext.error("no");
+
         }
     }
 
