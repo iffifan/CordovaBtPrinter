@@ -39,7 +39,9 @@ public class chbtprinter extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("list")) {
 
-            listBT(callbackContext);
+            String message = "Hello, World!";
+            callbackContext.success(message);
+//            listBT(callbackContext);
             return true;
         }
 //        else if (action.equals("open")) {
