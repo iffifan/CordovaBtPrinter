@@ -11,7 +11,7 @@
         <engine name="cordova" version=">=3.4.0"/>
     </engines>
 
-    <asset src="www/chbtprinter.js" target="js/hello.js"/>
+    <asset src="www/chbtprinter.js" target="js/chbtprinter.js"/>
 
     <js-module src="www/chbtprinter.js" name="chbtprinter">
         <clobbers target="chbtprinter" />
