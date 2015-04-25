@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.example.hello"
+        id="com.webdone.zjiangprinter"
         version="0.7.0">
 
-  <name>Hello</name>
+  <name>zjiangprinter</name>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/hello.js" target="js/hello.js"/>
+  <asset src="www/zjiangprinter.js" target="js/zjiangprinter.js"/>
 
-  <js-module src="www/hello.js" name="hello">
-    <clobbers target="hello" />
+  <js-module src="www/zjiangprinter.js" name="zjiangprinter">
+    <clobbers target="zjiangprinter" />
   </js-module>
 
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Hello">
-        <param name="android-package" value="com.example.plugin.Hello"/>
+      <feature name="zjiangprinter">
+        <param name="android-package" value="com.webdone.plugin.zjiangprinter"/>
       </feature>
     </config-file>
 
-    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
+    <source-file src="src/android/zjiangprinter.java" target-dir="src/com/example/plugin/"/>
   </platform>
 
 
