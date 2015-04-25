@@ -29,7 +29,7 @@ public class zjiangprinter extends CordovaPlugin {
     }
 
     void list(CallbackContext callbackContext) {
-        mService = new BluetoothService(CallbackContext, null);
+        mService = new BluetoothService(callbackContext, null);
         String errMsg = null;
         try {
             if( mService.isAvailable() == false ){
