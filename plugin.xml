@@ -23,7 +23,8 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/zjiangprinter.java" target-dir="src/com/example/plugin/"/>
+    <source-file src="src/android/zjiangprinter.java" target-dir="src/com/webdone/plugin/"/>
+      <source-file src="src/android/btsdk.jar" target-dir="libs" />
   </platform>
 
 
