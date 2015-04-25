@@ -11,7 +11,7 @@ public class zjiangprinter extends CordovaPlugin {
 
         if (action.equals("list")) {
 
-            listBT(callbackContext);
+            list(callbackContext);
             return true;
 
         } else {
@@ -21,7 +21,7 @@ public class zjiangprinter extends CordovaPlugin {
         }
     }
 
-    void listBT(CallbackContext callbackContext) {
+    void list(CallbackContext callbackContext) {
 
         try {
             String message = "Hello, Worldy";
@@ -29,7 +29,6 @@ public class zjiangprinter extends CordovaPlugin {
 
         } catch (Exception e) {
             errMsg = e.getMessage();
-            Log.e(LOG_TAG, errMsg);
             callbackContext.error(errMsg);
         }
     }
