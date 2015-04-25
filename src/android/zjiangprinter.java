@@ -22,7 +22,7 @@ public class zjiangprinter extends CordovaPlugin {
     }
 
     void list(CallbackContext callbackContext) {
-
+        String errMsg = null;
         try {
             String message = "Hello, Worldy";
             callbackContext.success(message);
