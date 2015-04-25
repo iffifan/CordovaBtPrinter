@@ -4,7 +4,14 @@ import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+
+import android.widget.Toast;
+
+import com.zj.btsdk.BluetoothService;
+
+
 public class zjiangprinter extends CordovaPlugin {
+    BluetoothService mService = null;
 
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
@@ -22,9 +29,17 @@ public class zjiangprinter extends CordovaPlugin {
     }
 
     void list(CallbackContext callbackContext) {
+        mService = new BluetoothService(this, null);
         String errMsg = null;
         try {
-            String message = "Hello, Worldy";
+            if( mService.isAvailable() == false ){
+                Toast.makeText(this, "Bluetooth is not available", Toast.LENGTH_LONG).show();
+                finish();
+            } else {
+                Toast.makeText(this, "Bluetooth is available", Toast.LENGTH_LONG).show();
+
+            }
+            String message = mService.isAvailable();
             callbackContext.success(message);
 
         } catch (Exception e) {
