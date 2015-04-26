@@ -52,14 +52,12 @@ public class zjiangprinter extends CordovaPlugin {
     void list(CallbackContext callbackContext) {
         String errMsg = null;
         try {
-//            if( this.isAvailable() == false ){
-//                Toast.makeText(this, "Bluetooth is not available", Toast.LENGTH_LONG).show();
-//                finish();
-//            } else {
-//                Toast.makeText(this, "Bluetooth is available", Toast.LENGTH_LONG).show();
-//
-//            }
-            String message = this.isAvailable();
+            if( this.isAvailable() == false ){
+                String message = "Bluetooth is NOT available";
+            } else {
+                String message = "Bluetooth is available";
+            }
+
             callbackContext.success(message);
 
         } catch (Exception e) {
