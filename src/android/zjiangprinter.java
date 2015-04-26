@@ -1,24 +1,35 @@
 package com.webdone.plugin;
 
-import org.apache.cordova.*;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.Set;
+import java.util.UUID;
 import android.widget.Toast;
 
-public class zjiangprinter extends CordovaPlugin {
+public class Zjiangprinter extends CordovaPlugin {
 //    BluetoothService mService = null;
 //    mService = new BluetoothService(this, null);
 
     private final BluetoothAdapter mAdapter;
-    this.mAdapter = BluetoothAdapter.getDefaultAdapter();
     private int mState;
 
-    public zjiangprinter ()
+    public Zjiangprinter ()
     {
         this.mAdapter = BluetoothAdapter.getDefaultAdapter();
         this.mState = 0;
