@@ -51,11 +51,12 @@ public class zjiangprinter extends CordovaPlugin {
 
     void list(CallbackContext callbackContext) {
         String errMsg = null;
+        String message;
         try {
             if( this.isAvailable() == false ){
-                String message = "Bluetooth is NOT available";
+                message = "Bluetooth is NOT available";
             } else {
-                String message = "Bluetooth is available";
+                message = "Bluetooth is available";
             }
 
             callbackContext.success(message);
