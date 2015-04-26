@@ -22,14 +22,14 @@ import java.util.Set;
 import java.util.UUID;
 import android.widget.Toast;
 
-public class Zjiangprinter extends CordovaPlugin {
+public class zjiangprinter extends CordovaPlugin {
 //    BluetoothService mService = null;
 //    mService = new BluetoothService(this, null);
 
     private final BluetoothAdapter mAdapter;
     private int mState;
 
-    public Zjiangprinter ()
+    public zjiangprinter ()
     {
         this.mAdapter = BluetoothAdapter.getDefaultAdapter();
         this.mState = 0;

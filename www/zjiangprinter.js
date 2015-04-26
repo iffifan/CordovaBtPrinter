@@ -2,6 +2,6 @@
 
 module.exports = {
     list: function (name, successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "Zjiangprinter", "list", [name]);
+        cordova.exec(successCallback, errorCallback, "zjiangprinter", "list", [name]);
     }
 };
