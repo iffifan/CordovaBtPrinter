@@ -4,16 +4,25 @@ import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothServerSocket;
+import android.bluetooth.BluetoothSocket;
 import android.widget.Toast;
-
-import com.zj.btsdk.BluetoothService;
-
 
 public class zjiangprinter extends CordovaPlugin {
 //    BluetoothService mService = null;
-    mService = new BluetoothService(this, null);
+//    mService = new BluetoothService(this, null);
 
+    private final BluetoothAdapter mAdapter;
+    this.mAdapter = BluetoothAdapter.getDefaultAdapter();
+    private int mState;
+
+    public zjiangprinter ()
+    {
+        this.mAdapter = BluetoothAdapter.getDefaultAdapter();
+        this.mState = 0;
+    }
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
@@ -32,14 +41,14 @@ public class zjiangprinter extends CordovaPlugin {
     void list(CallbackContext callbackContext) {
         String errMsg = null;
         try {
-            if( mService.isAvailable() == false ){
+            if( this.isAvailable() == false ){
                 Toast.makeText(this, "Bluetooth is not available", Toast.LENGTH_LONG).show();
                 finish();
             } else {
                 Toast.makeText(this, "Bluetooth is available", Toast.LENGTH_LONG).show();
 
             }
-            String message = mService.isAvailable();
+            String message = this.isAvailable();
             callbackContext.success(message);
 
         } catch (Exception e) {
@@ -48,6 +57,12 @@ public class zjiangprinter extends CordovaPlugin {
         }
     }
 
+    public boolean isAvailable(){
+        if (this.mAdapter == null) {
+            return false;
+        }
+        return true;
+    }
 
 //    private final  Handler mHandler = new Handler() {
 //        @Override
