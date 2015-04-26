@@ -3,7 +3,7 @@
         id="com.webdone.zjiangprinter"
         version="0.7.0">
 
-  <name>zjiangprinter</name>
+  <name>Zjiang Bluetooth Printer Plugin</name>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
@@ -23,7 +23,7 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/zjiangprinter.java" target-dir="src/com/webdone/plugin/"/>
+    <source-file src="src/android/Zjiangprinter.java" target-dir="src/com/webdone/plugin/"/>
       <source-file src="src/android/btsdk.jar" target-dir="libs" />
   </platform>
 
