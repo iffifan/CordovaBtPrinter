@@ -11,7 +11,8 @@ import com.zj.btsdk.BluetoothService;
 
 
 public class zjiangprinter extends CordovaPlugin {
-    BluetoothService mService = null;
+//    BluetoothService mService = null;
+    mService = new BluetoothService(this, null);
 
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
@@ -29,7 +30,6 @@ public class zjiangprinter extends CordovaPlugin {
     }
 
     void list(CallbackContext callbackContext) {
-        mService = new BluetoothService(callbackContext, null);
         String errMsg = null;
         try {
             if( mService.isAvailable() == false ){
@@ -47,4 +47,43 @@ public class zjiangprinter extends CordovaPlugin {
             callbackContext.error(errMsg);
         }
     }
+
+
+//    private final  Handler mHandler = new Handler() {
+//        @Override
+//        public void handleMessage(Message msg) {
+//            switch (msg.what) {
+//                case BluetoothService.MESSAGE_STATE_CHANGE:
+//                    switch (msg.arg1) {
+//                        case BluetoothService.STATE_CONNECTED:   //������
+//                            Toast.makeText(getApplicationContext(), "Connect successful",
+//                                    Toast.LENGTH_SHORT).show();
+//                            btnClose.setEnabled(true);
+//                            btnSend.setEnabled(true);
+//                            btnSendDraw.setEnabled(true);
+//                            break;
+//                        case BluetoothService.STATE_CONNECTING:  //��������
+//                            Log.d("��������","��������.....");
+//                            break;
+//                        case BluetoothService.STATE_LISTEN:     //�������ӵĵ���
+//                        case BluetoothService.STATE_NONE:
+//                            Log.d("��������","�ȴ�����.....");
+//                            break;
+//                    }
+//                    break;
+//                case BluetoothService.MESSAGE_CONNECTION_LOST:    //�����ѶϿ�����
+//                    Toast.makeText(getApplicationContext(), "Device connection was lost",
+//                            Toast.LENGTH_SHORT).show();
+//                    btnClose.setEnabled(false);
+//                    btnSend.setEnabled(false);
+//                    btnSendDraw.setEnabled(false);
+//                    break;
+//                case BluetoothService.MESSAGE_UNABLE_CONNECT:     //�޷������豸
+//                    Toast.makeText(getApplicationContext(), "Unable to connect device",
+//                            Toast.LENGTH_SHORT).show();
+//                    break;
+//            }
+//        }
+//
+//    };
 }
